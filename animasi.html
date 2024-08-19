@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: pink;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.heart {
+    width: 100px;
+    height: 90px;
+    background-color: red;
+    position: relative;
+    display: inline-block;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    width: 100px;
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+}
+
+.heart:before {
+    left: 50px;
+}
+
+.heart:after {
+    left: 0;
+}
+
+.message {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(-45deg);
+    }
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="heart"></div><br><br>
+        <p class="message"><b>dari ku untukmu</b></p>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Anda dapat menambahkan interaksi tambahan di sini jika diinginkan
+// Misalnya, menambahkan efek klik atau mengubah pesan
+
+document.querySelector('.heart').addEventListener('click', () => {
+    alert('You clicked the heart!');
+});
+
+    </script>
+</body>
+</html>
